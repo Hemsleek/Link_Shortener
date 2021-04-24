@@ -1,14 +1,33 @@
 import './App.css';
 
 function App() {
+  const accessToken = process.env.REACT_APP_ACCESS_TOKEN
+
+
+  const shortenLink = (e) => {
+      e.preventDefault()
+      const longLink = e.target.urlInput.value
+
+      fetch('https://api-ssl.bitly.com/v4/shorten',{
+        method:'POST',
+        headers:{
+          'Authorization':`Bearer ${accessToken}`,
+          'Content-Type':'application/json'
+        },
+        body:JSON.stringify({'long_url':longLink,'domain':'bit.ly'})
+      })
+      .then(response => response.json()).then(data => console.log(data))
+  }
+
   return (
     <div className="App">
-      <form >
+      <form onSubmit={shortenLink} >
         <input type="text"
           placeholder='Enter Url Here'
+          name='urlInput'
           className='url-input'
         />
-        <button>Shorten Link</button>
+        <button type='submit'>Shorten Link</button>
       </form>
       <div className="display-area">
         <input type="text"
