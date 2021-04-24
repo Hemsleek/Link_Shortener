@@ -1,5 +1,36 @@
+.App,
+form,
+.display-area{
+  display:flex;
+  flex-direction: column;
+}
 .App {
-  text-align: center;
+  padding:1rem;
+  align-items: center;
+}
+form{
+ margin:2rem 0; 
+}
+
+.display-area{
+  
+}
+input{
+  width:50vw;
+  padding:.5rem;
+  border-radius: 5px;
+  font-size:1.2rem;
+}
+input:focus{
+  outline:none;
+}
+
+button{
+  width: fit-content;
+  padding:.5rem 1rem;
+  margin:0 auto;
+  margin-top:1rem;
+  cursor: pointer;
 }
 
 
