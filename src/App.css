@@ -13,7 +13,6 @@ form{
 }
 
 .display-area{
-  
 }
 input{
   width:50vw;
@@ -24,7 +23,14 @@ input{
 input:focus{
   outline:none;
 }
-
+.url-output{
+  width:50vw;
+  padding:.8rem;
+  border-radius: 5px;
+  font-size:1.2rem;
+  color:grey ;
+  border:1px solid rgba(0, 0, 0, .5)
+}
 button{
   width: fit-content;
   padding:1rem 1.5rem;

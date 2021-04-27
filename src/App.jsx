@@ -4,7 +4,6 @@ import './App.css';
 function App() {
   const [shortLink, setShortLink] = useState({})
   const accessToken = process.env.REACT_APP_ACCESS_TOKEN
-  const urlOutput = useRef('')
 
   const shortenLink = (e) => {
       e.preventDefault()
@@ -20,30 +19,31 @@ function App() {
       })
       .then(response => response.json()).then(data => {
         setShortLink(data)
-        urlOutput.current = shortLink.link
       })
       .catch(console.log)
   }
-
   return (
     <div className="App">
       <form onSubmit={shortenLink} >
         <input type="text"
           placeholder='Enter Url Here'
-          ref={urlOutput}
           name='urlInput'
           className='url-input'
         />
         <button type='submit'>Shorten Link</button>
       </form>
       <div className="display-area">
-        <input type="text"
-          placeholder="shorted Link"
-          value={Object.keys(shortLink)? shortLink.link : ''}
+        <span className="url-output">
+          { Object.keys(shortLink).length? shortLink.link : 'Short Link' }
+          
+        </span>
+        {/* <input type="text"
+          placeholder="short Link"
+          value=
           
           className='url-output'
           readOnly
-        />
+        /> */}
         <button className="copy-button">
           Copy Link
         </button>
