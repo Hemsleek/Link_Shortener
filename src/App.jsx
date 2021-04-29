@@ -1,4 +1,4 @@
-import {useState, useRef} from 'react'
+import {useState} from 'react'
 import './App.css';
 
 function App() {
@@ -22,6 +22,10 @@ function App() {
       })
       .catch(console.log)
   }
+
+  const handleCopy = () => {
+    
+  }
   return (
     <div className="App">
       <form onSubmit={shortenLink} >
@@ -37,14 +41,8 @@ function App() {
           { Object.keys(shortLink).length? shortLink.link : 'Short Link' }
           
         </span>
-        {/* <input type="text"
-          placeholder="short Link"
-          value=
-          
-          className='url-output'
-          readOnly
-        /> */}
-        <button className="copy-button">
+        
+        <button onClick={handleCopy} className="copy-button">
           Copy Link
         </button>
       </div>

@@ -28,7 +28,7 @@ input:focus{
   padding:.8rem;
   border-radius: 5px;
   font-size:1.2rem;
-  color:grey ;
+  color:black ;
   border:1px solid rgba(0, 0, 0, .5)
 }
 button{
