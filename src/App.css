@@ -38,6 +38,7 @@ button{
   margin-top:1rem;
   cursor: pointer;
   border: none;
+  outline:none;
   border-radius: 5px;
 }
 button.copy-button{
